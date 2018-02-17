@@ -1,0 +1,15 @@
+.ui.styled.accordion.name-list {
+	width: 80%; 
+	margin: 20px auto;
+}
+
+
+.content .description {
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.ui.divided.list > .item {
+	display: flex;
+	align-items: center;
+}
