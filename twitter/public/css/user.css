@@ -1,0 +1,38 @@
+.ui.list {
+	width: 60%; 
+	margin: 20px auto;
+	
+}
+
+.ui.list > .item {
+	margin-top: 10px;
+}
+
+.ui.divided.list > .item {
+	display: flex;
+	align-items: center;
+}
+
+.list .list {
+	margin-left: 10px !important;
+}
+.main {
+	margin-bottom: 40px !important;
+}
+.list .description {
+	font-size: 18px;
+	line-height: 1.5;
+}
+.list .description a {
+	font-size: 14px;
+}
+.list .description .operate {
+	margin-left: 10px;
+}
+.more {
+	text-align: center;
+	margin: 20px;
+}
+.item.read {
+	opacity: 0.3;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <link rel="stylesheet" type="text/css" href="/public/semantic/semantic.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/user.css">
+  <script type="text/javascript" src="/public/js/jquery.js"></script>
+  <script type="text/javascript" src="/public/semantic/semantic.js"></script>
+</head>
+<body class="">
+	{{#if user}}
+	<div class="ui relaxed divided list">
+		<div class="item">
+      <img width="48" height="48" src="/public/img/{{user.screen_name}}" />
+      <div class="content">
+        <div class="description">
+          <div class="desc-txt">{{{user.description}}}</div>
+        </div>
+      </div>
+    </div>
+	</div>
+	{{else}}
+		xxxx
+	{{/if}}
+
+  <div id="wrap"></div>
+  <div class="more">
+    <a id="more" href="javascript:void(0)">load more</a>
+  </div>
+  
+</body>
+<script type="text/javascript">
+	window.pageConfig = {
+		userList: {{{list}}}
+	} 
+</script>
+<script type="text/javascript" src="/public/js/user.js"></script>
+</html>

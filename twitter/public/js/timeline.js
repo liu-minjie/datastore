@@ -15,6 +15,10 @@ $('.name-list')
     }
   });
 
+function format (date) {
+  const d = new Date(date);
+  return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+}
 let loading = false;
 $('.name-list').on('click', '.title', function (e) {
   const target = $(e.target).closest('.title');
@@ -30,11 +34,18 @@ $('.name-list').on('click', '.title', function (e) {
       if (res.success) {
         const userList = `<div class="ui relaxed divided list">
           ${res.data.map((item) => {
-            const url = item.url ? `<div><a href=""></a></div>` : '';
+            item.urls = item.urls || [];
+            item.urls.forEach((it) => {
+              const replace = `<a href="${it.expand}" target="_blank">${it.expand.match(/https?:\/\/([^\/]+)/)[1]}</a>`;
+              item.text = item.text.replace(it.url, replace);
+            });
+            
             return `<div class="item">
-            <i class="large github middle aligned icon"></i>
+            <img width="48" height="48" src="/public/img/${item.belong}" />
             <div class="content">
-              <a class="header">${item.owner}</a>
+              <div class="header"> 
+                <span style="font-size: 12px;">${format(item.created_at)}</span>
+              </div>
               <div class="description">
               ${item.text}
               </div>

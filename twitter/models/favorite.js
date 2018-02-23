@@ -22,3 +22,16 @@ exports.get = function (belong, cb) {
     cb(null, list);
 	});
 }
+
+exports.addStr = function (data, cb) {
+  Favorite.update({
+    id_str: data.id_str
+  }, {
+    $set: {
+      in_reply_to_status_id_str: data.in_reply_to_status_id_str
+    }
+  }, (err, res) => {
+    console.log(res);
+    cb(err, res);
+  })
+}

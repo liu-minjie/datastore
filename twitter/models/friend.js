@@ -22,3 +22,5 @@ exports.get = function (belong, cb) {
     cb(null, list);
 	})
 }
+
+exports.Friend = Friend;

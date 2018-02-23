@@ -33,6 +33,9 @@ const tweetSchema = new mongoose.Schema({
 	in_reply_to_screen_name: {
 		type: String
 	},
+	in_reply_to_status_id_str: {
+		type: String
+	},
 	owner: {
 		type: String
 	},
@@ -47,6 +50,9 @@ const tweetSchema = new mongoose.Schema({
 	},
 	status: {
 		type: Number
+	},
+	hasReply: {
+		type: Boolean
 	},
 	retweeted_status: {
 		id_str: {
@@ -73,6 +79,9 @@ const tweetSchema = new mongoose.Schema({
 		in_reply_to_screen_name: {
 			type: String
 		},
+		in_reply_to_status_id_str: {
+			type: String
+		},
 		owner: {
 			type: String
 		},
@@ -86,7 +95,7 @@ const tweetSchema = new mongoose.Schema({
 			type: String
 		},
 		status: {
-			type: Number
+			type: Number // 0: rm, 1: read, 2: favorite
 		},
 		reply: {
 			type: [String]
